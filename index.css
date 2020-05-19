@@ -1,0 +1,157 @@
+:root {
+  --main-white: #ffffff;
+  --main-black: #000000;
+  --main-yellow: #fef8ec;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*padding, margin, @media*/
+body {
+  padding: auto;
+  margin: auto;
+}
+/*typography*/
+h1 {
+  font-family: Merriweather, serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 49px;
+}
+
+h2 {
+  font-family: Merriweather, serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 30px;
+}
+
+h3 {
+  font-family: Open Sans, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: Open Sans, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+/* navbar */
+
+ul {
+  list-style: none;
+}
+#navbar {
+  background-color: var(--main-yellow);
+}
+.nav {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: var(--main-white);
+  z-index: 10;
+}
+
+#logo a {
+  font-weight: 700;
+  font-size: 21px;
+  display: inline-block;
+  float: left;
+  margin-left: 2rem;
+}
+
+.nav-list a {
+  display: inline-block;
+  float: right;
+  font-size: 16px;
+  padding: 2rem;
+  margin-right: 0.5rem;
+  font-family: Open Sans, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 100%;
+  vertical-align: Top;
+  text-decoration: none;
+  color: var(--main-black);
+}
+
+/*welcome*/
+
+#welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  item-align: left;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--main-yellow);
+}
+
+#welcome h1 {
+  padding-top: 200px;
+  padding-left: 200px;
+  padding-right: 600px;
+  padding-bottom: 40px;
+}
+
+#welcome p {
+  padding-left: 200px;
+  padding-right: 400px;
+  padding-bottom: 40px;
+}
+
+/*projects*/
+
+.project-grid {
+  display: flex;
+  flex-direciton: row;
+  padding-top: 120px;
+}
+
+.project-image {
+  width: 510px;
+  height: 377.74px;
+  left: 730px;
+  top: 1062px;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+#projects h3 {
+  padding: 80px 0px 15px 70px;
+}
+
+#projects h2 {
+  padding: 0px 0px 15px 70px;
+}
+
+#projects p {
+  padding: 0px 70px 40px 70px;
+}
+
+#projects a {
+  font-family: Open Sans, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--main-black);
+  padding: 0px 0px 140px 70px;
+}
