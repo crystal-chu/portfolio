@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- character encoding in which the document is encoded -->
     <meta charset="UTF-8" />
+    <!-- change viewport to width of device, useful for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ie compatibility -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <!-- icons -->
+    <script
+      src="https://kit.fontawesome.com/27304ff0f5.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- styling -->
     <link href="./index.css" rel="stylesheet" />
-    <title>Crystal Chu</title>
+    <!-- title of web page -->
+    <title>Crystal Chu • Designer</title>
   </head>
 
   <body>
+    <!-- Top Navigation -->
     <header>
-      <nav id="navbar">
-        <div id="logo">
-          <a href=" "> Crystal C.</a>
-        </div>
+      <div id="logo">
+        <a href=" "> Crystal C.</a>
+      </div>
+      <nav id="navbar" class="navbar">
         <ul>
           <li>
             <a href=" ">Work</a>
@@ -32,6 +44,7 @@
       </nav>
     </header>
 
+    <!-- Content -->
     <main>
       <section id="welcome">
         <h1>Hello friends, I'm Crystal.</h1>
@@ -41,49 +54,85 @@
           what I do.
         </p>
         <p>Currently designing at Capital One.</p>
+        <a href="#projects" id="chevron-down">
+          <i class="fas fa-chevron-down fa-3x"></i>
+        </a>
       </section>
 
       <section id="projects">
-        <div class="project-grid">
-          <div class="project-description">
-            <h3>Passion Project</h3>
-            <h2>TravelHer</h2>
-            <p>
+        <div class="project">
+          <div class="project-info">
+            <h3 class="project-company">Passion Project</h3>
+            <h2 class="project-name">TravelHer</h2>
+            <p class="project-description">
               A streamlined travel safety platform for solo female travellers.
             </p>
-            <a href="" class="view-project">View Project</a>
+            <a href="" class="project-link">View Project</a>
           </div>
-          <div class="project-image">
-            <a href="" class="project project-tile">
-              <img
-                class="project-image"
-                src="./assets/header_May19.svg"
-                alt="TravelHer Preview"
-              />
-            </a>
+          <a href="">
+            <img
+              class="project-image"
+              src="./assets/travelher-thumbnail.svg"
+              alt="Project Image"
+            />
+          </a>
+        </div>
+        <div class="project">
+          <a href="">
+            <img
+              class="project-image"
+              src="./assets/travelher-thumbnail.svg"
+              alt="Project Image"
+            />
+          </a>
+          <div class="project-info">
+            <h3 class="project-company">Passion Project</h3>
+            <h2 class="project-name">TravelHer</h2>
+            <p class="project-description">
+              A streamlined travel safety platform for solo female travellers.
+            </p>
+            <a href="" class="project-link">View Project</a>
           </div>
         </div>
-
-        <div class="project-grid">
-          <div class="project-description">
-            <h3>Passion Project</h3>
-            <h2>TravelHer</h2>
-            <p>
+        <div class="project">
+          <div class="project-info">
+            <h3 class="project-company">Passion Project</h3>
+            <h2 class="project-name">TravelHer</h2>
+            <p class="project-description">
               A streamlined travel safety platform for solo female travellers.
             </p>
-            <a href="" class="view-project">View Project</a>
+            <a href="" class="project-link">View Project</a>
           </div>
-          <div class="project-image">
-            <a href="" class="project project-tile">
-              <img
-                class="project-image"
-                src="./assets/header_2 – resized@2x.png"
-                alt="TravelHer Preview"
-              />
-            </a>
-          </div>
+          <a href="">
+            <img
+              class="project-image"
+              src="./assets/travelher-thumbnail.svg"
+              alt="Project Image"
+            />
+          </a>
         </div>
       </section>
     </main>
+
+    <footer>
+      <nav id="footer-navbar" class="navbar">
+        <ul>
+          <li>
+            <a href="">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="far fa-envelope"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="copyright">
+        <p>Copyright Crystal Chu 2020</p>
+        <p>Made with _</p>
+      </div>
+    </footer>
   </body>
 </html>
