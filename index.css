@@ -2,13 +2,49 @@
   --color-white: #ffffff;
   --color-black: #000000;
   --color-yellow: #fef8ec;
-  --color-yellow-transparent: rgb(254, 248, 236, 0);
 
   --padding-global: 10vw;
 
-  --height-header: 103px;
-  --height-welcome: 947px;
-  --height-footer: 200px;
+  --height-header: 6.4375rem;
+  /* --height-welcome: 59.1875rem; */
+  --height-welcome: 105vh;
+  --height-footer: 12.5rem;
+}
+
+@media screen and (max-width: 240em) {
+  html {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 215em) {
+  html {
+    font-size: 1.375rem;
+  }
+}
+@media screen and (max-width: 160em) {
+  html {
+    font-size: 1.25rem;
+  }
+}
+@media screen and (max-width: 128em) {
+  html {
+    font-size: 1.125rem;
+  }
+}
+@media screen and (max-width: 90em) {
+  html {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 56.25em) {
+  html {
+    font-size: 0.75rem;
+  }
+}
+@media screen and (max-width: 23.4375em) {
+  html {
+    font-size: 0.625rem;
+  }
 }
 
 /*GLOBAL RESET / STYLES*/
@@ -25,19 +61,36 @@
 
 /*GLOBAL COLORS*/
 body {
-  background-color: var(--color-white);
+  /* background-color: var(--color-white); */
+  background-color: var(--color-yellow);
 }
 header {
   background-image: url("./assets/header-background.svg");
   background-size: cover;
 }
 main section#welcome {
-  background-image: url("./assets/Group 18.svg");
+  background-color: var(--color-white);
+  background-image: url("./assets/welcome-background.svg");
   background-size: cover;
 }
+main section#projects {
+  background-color: var(--color-white);
+}
 footer {
+  background-color: var(--color-white);
   background-image: url("./assets/footer-background.svg");
   background-size: cover;
+}
+@media screen and (min-width: 90em) {
+  header {
+    background-image: url("./assets/header-background-lg.svg");
+  }
+  main section#welcome {
+    background-image: url("./assets/welcome-background-lg.svg");
+  }
+  footer {
+    background-image: url("./assets/footer-background-lg.svg");
+  }
 }
 
 /*GLOBAL PADDING*/
@@ -54,7 +107,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 27px;
+  padding-top: 1.6875rem;
   width: 100%;
   height: var(--height-header);
   /* ensure navbar stacks on top of all other elements */
@@ -76,37 +129,37 @@ h1 {
   font-family: Merriweather, serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 48px;
-  line-height: 49px;
+  font-size: 3rem;
+  line-height: 3.0625rem;
 }
 h2 {
   font-family: Merriweather, serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 36px;
-  line-height: 30px;
+  font-size: 2.25rem;
+  line-height: 1.875rem;
 }
 h3 {
   font-family: Open Sans, sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 1rem;
+  line-height: 1.375rem;
   text-transform: uppercase;
 }
 p {
   font-family: Open Sans, sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
-  line-height: 30px;
+  font-size: 1.125rem;
+  line-height: 1.875rem;
 }
 a {
   font-family: Open Sans, sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 1rem;
+  line-height: 1.375rem;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--color-black);
@@ -128,13 +181,36 @@ header {
   font-family: Merriweather, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 21px;
-  line-height: 26px;
+  font-size: 1.3125rem;
+  line-height: 1.625rem;
   text-transform: uppercase;
 }
 .navbar ul {
   list-style: none;
   display: flex;
+}
+
+/* wavy underline */
+.underline-wave {
+  /* we make it block so the underline is constrained
+  to size of the element*/
+  display: inline-block;
+}
+.underline-wave::after {
+  content: "";
+  display: block;
+  height: 13px;
+  width: 100%;
+  background-image: url("./assets/text-underline-wave.svg");
+  background-repeat: repeat-x;
+  transform: scaleX(0);
+  transform-origin: 0%;
+  opacity: 0;
+  transition: all 500ms ease;
+}
+.underline-wave:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
 }
 
 /*WELCOME*/
@@ -143,20 +219,19 @@ header {
   flex-direction: column;
 }
 #welcome h1 {
-  margin-top: 180px;
+  margin-top: 20vh;
 }
 #welcome p {
-  margin-top: 43px;
+  margin-top: 2.6875rem;
 }
 #welcome #chevron-down {
   text-align: center;
-  margin-top: auto;
-  margin-bottom: 180px;
+  margin-top: 20vh;
 }
 
 /*PROJECTS*/
 #projects {
-  padding-top: 30px;
+  padding-top: 1.875rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -164,26 +239,30 @@ header {
 .project {
   display: flex;
   flex-direction: row;
-  margin: 100px 0;
+  margin: 6.25rem 0;
 }
 .project-info {
-  padding: 80px 69px 79px 80px;
+  padding: 5rem 4.3125rem 4.9375rem 5rem;
 }
 .project-company {
-  padding: 8px 0;
+  padding: 0.5rem 0;
 }
 .project-name {
-  padding: 8px 0;
+  padding: 0.5rem 0;
 }
 .project-description {
-  padding-top: 8px;
-  padding-bottom: 41px;
+  padding-top: 0.5rem;
+  padding-bottom: 2.5625rem;
 }
 .project-image {
-  width: 510px;
-  height: 377.74px;
+  width: 31.875rem;
+  height: 377.4.625rem;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+.project-image:hover {
+  transform: scale(1.05);
 }
 
 /* FOOTER */
@@ -198,7 +277,7 @@ footer {
   text-transform: uppercase;
 }
 #footer-navbar {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 #footer-navbar ul li {
   padding: 0 2rem;
