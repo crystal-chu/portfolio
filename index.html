@@ -12,11 +12,21 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
     <!-- icons -->
     <script
       src="https://kit.fontawesome.com/27304ff0f5.js"
       crossorigin="anonymous"
     ></script>
+    <!-- rough notation library -->
+    <script
+      defer
+      src="https://unpkg.com/rough-notation/lib/rough-notation.iife.js"
+    ></script>
+    <script defer src="./index.js"></script>
     <!-- styling -->
     <link href="./index.css" rel="stylesheet" />
     <!-- title of web page -->
@@ -32,13 +42,13 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li>
-            <a class="underline-wave" href=" ">Work</a>
+            <a class="underline-wave" href=" ">work</a>
           </li>
           <li>
-            <a class="underline-wave" href=" ">Fun</a>
+            <a class="underline-wave" href=" ">fun</a>
           </li>
           <li>
-            <a class="underline-wave" href=" ">About</a>
+            <a class="underline-wave" href=" ">about</a>
           </li>
         </ul>
       </nav>
@@ -47,15 +57,19 @@
     <!-- Content -->
     <main>
       <section id="welcome">
-        <h1>Hello friends, I'm Crystal.</h1>
+        <h1>Hi, I'm Crystal <span id="designer"> Product Designer.</span></h1>
         <p>
-          I’m a Product Designer passionate about crafting human-centered
-          digital experiences that put a smile on people’s faces. I really love
-          what I do.
+          I’m passionate about putting a smile on people’s faces. I love every
+          step of the design process, and I get a kick out of shipping
+          meaningful products that make people's lives better.
         </p>
-        <p>Currently designing at Capital One.</p>
+        <p>
+          Currently designing experiences and systems at
+          <span style="color:#FFAE18"><b>Capital One</b></span
+          >.
+        </p>
         <a href="#projects" id="chevron-down">
-          <img src="./assets/down-chevron.svg" />
+          <img class="hang" src="./assets/down-chevron.svg" />
         </a>
       </section>
 
@@ -63,17 +77,19 @@
         <h2>Selected Projects</h2>
         <div class="project">
           <div class="project-info">
-            <h3 class="project-company">Passion Project</h3>
-            <h2 class="project-name">TravelHer</h2>
+            <h3 class="project-company">Capital One</h3>
+            <h2 class="project-name">COVID-19 Microsite</h2>
             <p class="project-description">
-              A streamlined travel safety platform for solo female travellers.
+              Redesigned page to improve usability and navigation of COVID-19
+              related information to help customers who are financially impacted
+              by the pandemic.
             </p>
-            <a href="" class="underline-wave">View Project</a>
+            <a href="" class="underline-wave">VIEW PROJECT</a>
           </div>
           <a href="">
             <img
               class="project-image"
-              src="./assets/travelher-thumbnail.svg"
+              src="./assets/covid-thumbnail.svg"
               alt="Project Image"
             />
           </a>
@@ -90,9 +106,10 @@
             <h3 class="project-company">Passion Project</h3>
             <h2 class="project-name">TravelHer</h2>
             <p class="project-description">
-              A streamlined travel safety platform for solo female travellers.
+              Researched and designed a streamlined travel safety app for solo
+              female travellers.
             </p>
-            <a href="" class="underline-wave">View Project</a>
+            <a href="" class="underline-wave">VIEW PROJECT</a>
           </div>
         </div>
         <div class="project">
@@ -102,7 +119,7 @@
             <p class="project-description">
               A streamlined travel safety platform for solo female travellers.
             </p>
-            <a href="" class="underline-wave">View Project</a>
+            <a href="" class="underline-wave">VIEW PROJECT</a>
           </div>
           <a href="">
             <img
@@ -131,8 +148,8 @@
         </ul>
       </nav>
       <div class="copyright">
-        <p>Copyright Crystal Chu 2020</p>
-        <p>Made with _</p>
+        <p>©2020 Crystal Chu</p>
+        <p>Designed + coded with a whole lotta love.</p>
       </div>
     </footer>
   </body>

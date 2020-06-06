@@ -1,6 +1,6 @@
 :root {
   --color-white: #ffffff;
-  --color-black: #000000;
+  --color-black: #464646;
   --color-yellow: #fef8ec;
 
   --padding-global: 10vw;
@@ -119,6 +119,9 @@ main section#welcome {
   min-height: var(--height-welcome);
   width: 100%;
 }
+main section#projects {
+  padding-top: var(--height-header);
+}
 footer {
   height: var(--height-footer);
   width: 100%;
@@ -130,14 +133,16 @@ h1 {
   font-style: normal;
   font-weight: 700;
   font-size: 3rem;
-  line-height: 3.0625rem;
+  line-height: 4rem;
+  color: var(--color-black);
 }
 h2 {
   font-family: Merriweather, serif;
   font-style: normal;
   font-weight: 700;
   font-size: 2.25rem;
-  line-height: 1.875rem;
+  line-height: 2.25rem;
+  color: var(--color-black);
 }
 h3 {
   font-family: Open Sans, sans-serif;
@@ -146,13 +151,15 @@ h3 {
   font-size: 1rem;
   line-height: 1.375rem;
   text-transform: uppercase;
+  color: var(--color-black);
 }
 p {
   font-family: Open Sans, sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.875rem;
+  color: var(--color-black);
 }
 a {
   font-family: Open Sans, sans-serif;
@@ -160,11 +167,14 @@ a {
   font-weight: 600;
   font-size: 1rem;
   line-height: 1.375rem;
-  text-transform: uppercase;
+  text-transform: none;
   text-decoration: none;
   color: var(--color-black);
 }
-
+mark {
+  background-color: rgba(253, 184, 57, 0.57);
+  color: var(--color-black);
+}
 /* NAVBAR */
 header {
   /* vertically center */
@@ -183,7 +193,7 @@ header {
   font-weight: bold;
   font-size: 1.3125rem;
   line-height: 1.625rem;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 .navbar ul {
   list-style: none;
@@ -191,9 +201,7 @@ header {
 }
 
 /* wavy underline */
-.underline-wave {
-  /* we make it block so the underline is constrained
-  to size of the element*/
+/* .underline-wave {
   display: inline-block;
 }
 .underline-wave::after {
@@ -206,12 +214,12 @@ header {
   transform: scaleX(0);
   transform-origin: 0%;
   opacity: 0;
-  transition: all 500ms ease;
+  transition: all 0.2s ease;
 }
 .underline-wave:hover::after {
   transform: scaleX(1);
   opacity: 1;
-}
+} */
 
 /*WELCOME*/
 #welcome {
@@ -220,13 +228,37 @@ header {
 }
 #welcome h1 {
   margin-top: 20vh;
+  max-width: 15ch;
 }
 #welcome p {
   margin-top: 2.6875rem;
+  max-width: 75ch;
 }
 #welcome #chevron-down {
   text-align: center;
-  margin-top: 20vh;
+  margin-top: 10vh;
+}
+@keyframes hang {
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+.hang {
+  display: inline-block;
+  transition-duration: 0.5s;
+  transition-property: transform;
+}
+.hang:hover {
+  transform: translateY(10px);
+  animation-name: hang;
+  animation-duration: 1.5s;
+  animation-delay: 0.2s, 0.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 /*PROJECTS*/
@@ -238,8 +270,20 @@ header {
 }
 .project {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   margin: 6.25rem 0;
+}
+.project:nth-of-type(odd) {
+  flex-direction: column-reverse;
+}
+@media screen and (min-width: 90em) {
+  .project {
+    flex-direction: row;
+  }
+  .project:nth-of-type(odd) {
+    flex-direction: row;
+  }
 }
 .project-info {
   padding: 5rem 4.3125rem 4.9375rem 5rem;
@@ -253,16 +297,17 @@ header {
 .project-description {
   padding-top: 0.5rem;
   padding-bottom: 2.5625rem;
+  max-width: 50ch;
 }
 .project-image {
   width: 31.875rem;
   height: 377.4.625rem;
-  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
+  /*box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;*/
   transition: all 0.2s ease-in-out;
 }
 .project-image:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 /* FOOTER */
@@ -274,11 +319,21 @@ footer {
 }
 .copyright {
   text-align: center;
-  text-transform: uppercase;
+}
+.copyright p {
+  font-size: 0.85rem;
+  font-weight: 300;
 }
 #footer-navbar {
   margin-bottom: 0.625rem;
 }
 #footer-navbar ul li {
-  padding: 0 2rem;
+  padding: 0 1rem;
+}
+#footer-navbar i {
+  font-size: 1.5rem;
+  transition: all 0.2s ease-in-out;
+}
+#footer-navbar i:hover {
+  transform: scale(1.05);
 }
